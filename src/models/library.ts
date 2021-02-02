@@ -7,3 +7,10 @@ export interface Library {
     booksCount: number;
     books: Book[];
 }
+
+export interface LibraryPrecomputed {
+    id: number;
+    daysToSignUp: number;
+    maxTotalScore: number;
+    sortedBooks: Book[];
+}

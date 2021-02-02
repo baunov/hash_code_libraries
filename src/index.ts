@@ -2,8 +2,11 @@ import fs from 'fs';
 import path from 'path'
 import {parseData} from './parsers';
 import {InputData} from './models/input-data';
+import {compute} from './solution/compute';
+import {stringifyOutput} from './solution/stringify-output';
 
-const fileName = 'a_example';
+const fileName = 'e_so_many_books';
+
 
 const fileStr = fs.readFileSync(
     path.join(__dirname, `../input/${fileName}.txt`),
@@ -11,6 +14,31 @@ const fileStr = fs.readFileSync(
 );
 
 const data: InputData = parseData(fileStr);
+
+console.log('STARTED');
+
+const out = compute(data);
+
+console.log('DONE');
+
+// console.log(out);
+// console.log(stringifyOutput(out));
+
+// console.log(JSON.stringify(precomputed, null, 2));
+
+/*
+const scanner: BooksScanner = new BooksScanner(data);
+
+scanner.enqueueLibraries(
+    ...precomputed
+        .sort((p1, p2) => p1.priority - p2.priority )
+        .map((lib) => lib.id)
+);
+
+scanner.start();
+
+console.log(scanner.totalScore);
+*/
 
 // data.libraries
 
