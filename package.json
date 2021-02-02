@@ -1,0 +1,16 @@
+{
+  "name": "google-hash-code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc-watch --onSuccess \"node ./dist/index.js\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^14.14.22",
+    "tsc-watch": "^4.2.9",
+    "typescript": "^3.3.3"
+  }
+}
